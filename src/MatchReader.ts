@@ -11,7 +11,7 @@ interface DataReader {
 export class MatchReader {
   matches: MatchData[] = [];
 
-  constructor(public reader: DataReader) {}
+  constructor(public reader: DataReader) {} 
   load(): void {
     this.reader.read();
     this.matches = this.reader.data.map((row: string[]): MatchData => {
