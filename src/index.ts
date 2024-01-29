@@ -7,8 +7,8 @@ import { HtmlReport } from "./reportTargets/htmlReport";
 
 // const csvFileReader = new CsvFileReader("football.csv");
 const matchReader = MatchReader.fromCsv("football.csv");
-matchReader.load();
+const summary = Summary.winsAnalysisWithHtmlReport("Man United");
 
-const summary = new Summary(new WinsAnalysis("Man United"), new HtmlReport());
-const summary1 = Summary.winsAnalysisWithHtmlReport("Man United");
+matchReader.load();
+// const summary = new Summary(new WinsAnalysis("Man United"), new HtmlReport());
 summary.buildAndPrintReport(matchReader.matches);
